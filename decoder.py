@@ -22,7 +22,7 @@ class VAE_ResidualBlock(nn.Module):
         residue = x
 
         x = self.groupnorm_1(x)
-        
+        #some
 
         x = F.silu(x)
         x = self.conv_1(x)
