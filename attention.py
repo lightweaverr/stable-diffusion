@@ -4,7 +4,7 @@ from torch.nn import functional as F
 import math
 
 class SelfAttention(nn.Module):
-    def __init__(self, n_heads, d_embed, in_proj_bias=True, out_proj_bias=True) -> None:
+    def __init__(self, n_heads: int, d_embed: int, in_proj_bias=True, out_proj_bias=True) -> None:
         super().__init__()
         assert d_embed % n_heads == 0
         # Wq, Wk, Wv matrices
@@ -50,7 +50,7 @@ class SelfAttention(nn.Module):
         return output
 
 class CrossAttention(nn.Module):
-    def __init__(self, n_heads, d_embed, d_cross, in_proj_bias=True, out_proj_bias=True):
+    def __init__(self, n_heads: int, d_embed: int, d_cross, in_proj_bias=True, out_proj_bias=True):
         super().__init__()
         assert d_embed % n_heads == 0
         # Wq, Wk, Wv matrices
